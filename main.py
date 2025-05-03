@@ -14,6 +14,7 @@ class Cube:
         self.visual_scale_y = self.scale_y
         self.bounce_factor = 0.5
         self.gravity = 0.5
+        self.take_control = False
         
     def get_rect(self) -> rl.Rectangle:
         return rl.Rectangle(self.position.x, self.position.y, self.scale_x, self.scale_y)
