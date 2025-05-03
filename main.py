@@ -121,10 +121,18 @@ def phyc():
             if rect_vs_rect(player_rect, platform):
                 if velocity.x > 0:
                     position.x = platform.x - SCALE_X
+                    if abs(velocity.x) > 1:
+                        velocity.x = -velocity.x * bounce_factor
+                    else:
+                        velocity.x = 0
                 elif velocity.x < 0:
                     position.x = platform.x + platform.width
-                velocity.x = 0
+                    if abs(velocity.x) > 1:
+                        velocity.x = -velocity.x * bounce_factor
+                    else:
+                        velocity.x = 0
                 break
+
 
         
         position.y += velocity.y
